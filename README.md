@@ -3,6 +3,10 @@
 Companion login methods for the **bundled JetBrains GitHub plugin**, for organizations
 whose **OAuth App access restrictions** block the "JetBrains IDE Integration" OAuth app.
 
+## Marketplace link
+
+https://plugins.jetbrains.com/plugin/32814-ghc-github-auth
+
 ## The problem
 
 The GitHub plugin in JetBrains IDEs offers two logins:
