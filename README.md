@@ -1,5 +1,7 @@
 # ghc-github-auth
 
+add one line for testing
+
 Companion login methods for the **bundled JetBrains GitHub plugin**, for organizations
 whose **OAuth App access restrictions** block the "JetBrains IDE Integration" OAuth app.
 
