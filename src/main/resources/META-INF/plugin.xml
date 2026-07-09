@@ -1,0 +1,38 @@
+<idea-plugin>
+    <id>com.jiec.ghc.github.auth</id>
+    <name>GHC GitHub Auth</name>
+    <vendor url="https://github.com/jiec-msft">jiec-msft</vendor>
+    <description><![CDATA[
+        Companion login methods for the bundled GitHub plugin, for organizations that block
+        the "JetBrains IDE Integration" OAuth app via OAuth App access restrictions.
+        <ul>
+            <li><b>Log in with GitHub CLI</b> — reuses the token of your locally authenticated
+                <code>gh</code> CLI (the GitHub CLI OAuth app is commonly allow-listed).</li>
+            <li><b>Log in with Device Flow</b> — runs the GitHub Device Flow against an OAuth app
+                client id you provide (e.g. one your organization has approved).</li>
+        </ul>
+        Acquired tokens are stored into the bundled GitHub plugin's normal account store,
+        so Pull Requests, Gists and clone integration work as usual.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.plugins.github</depends>
+
+    <dependencies>
+        <module name="intellij.platform.collaborationTools"/>
+    </dependencies>
+
+    <actions>
+        <group id="GhcGithubAuth.Group" text="GHC GitHub Auth" description="Alternative GitHub login methods" popup="true">
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <action id="GhcGithubAuth.LoginWithGhCli"
+                    class="com.jiec.ghc.githubauth.LoginWithGhCliAction"
+                    text="Log in to GitHub with gh CLI Token"
+                    description="Reuse the GitHub CLI's OAuth token for the GitHub plugin"/>
+            <action id="GhcGithubAuth.LoginWithDeviceFlow"
+                    class="com.jiec.ghc.githubauth.LoginWithDeviceFlowAction"
+                    text="Log in to GitHub with Device Flow..."
+                    description="GitHub Device Flow login with a custom OAuth app client id"/>
+        </group>
+    </actions>
+</idea-plugin>
