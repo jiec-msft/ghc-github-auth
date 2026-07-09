@@ -64,6 +64,10 @@ Targets IntelliJ-platform IDEs 2025.1+ with the GitHub plugin enabled.
 `Settings → Plugins → ⚙ → Install Plugin from Disk...` and pick the zip from
 `build\distributions\`.
 
+## JetBrains Youtrack issue
+
+https://youtrack.jetbrains.com/articles/SUPPORT-A-2404
+
 ## License
 
 [MIT](LICENSE)
